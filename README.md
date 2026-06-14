@@ -156,7 +156,10 @@ MIT License - Ver [LICENSE](LICENSE) para más detalles.
 
 ## 👤 Autor / Author
 
-**Hugo P. Vigo** - [GitHub](https://github.com/Hugopvigo)
+**Hugo Perez-Vigo Fernandez** — [@hugopvigo](https://twitter.com/hugopvigo)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Hugopvigo-181717?style=for-the-badge&logo=github)](https://github.com/Hugopvigo)
+[![Twitter](https://img.shields.io/badge/Twitter-@hugopvigo-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/hugopvigo)
 
 ---
 
