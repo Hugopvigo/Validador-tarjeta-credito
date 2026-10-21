@@ -1,84 +1,54 @@
-<div align="center">
+<p align="center">
+  <img src="docs/capturas/00-cabecera.png" alt="Validador de tarjetas de crédito con el algoritmo de Luhn" width="100%">
+</p>
 
-# 💳 Validador de Tarjetas de Crédito / Credit Card Validator
+<p align="center">
+  <b>Un validador de números de tarjeta por Luhn, en Python y sin dependencias.</b><br>
+  Comprueba el checksum, la longitud y dice qué empresa lo ha emitido.
+</p>
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
-![Algorithm](https://img.shields.io/badge/Algorithm-Luhn-blue?style=for-the-badge)
-
-Valida números de tarjeta de crédito con el **algoritmo de Luhn** e identifica la empresa emisora.
-Validates credit card numbers with the **Luhn algorithm** and identifies the issuing company.
-
-</div>
-
----
-
-## 📋 Descripción / Description
-
-**🇪🇸 Español:**
-Este proyecto valida números de tarjetas de crédito utilizando el estándar industrial **algoritmo de Luhn** (ISO/IEC 7812-1). Además de verificar la integridad del número, identifica la empresa emisora (Visa, Mastercard, Amex, etc.).
-
-**🇬🇧 English:**
-This project validates credit card numbers using the industry standard **Luhn algorithm** (ISO/IEC 7812-1). Beyond verifying the number's integrity, it identifies the issuing company (Visa, Mastercard, Amex, etc.).
+<p align="center">
+  <img alt="python" src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat-square&labelColor=1a1a1e">
+  <img alt="algoritmo" src="https://img.shields.io/badge/algoritmo-Luhn-4EA8FF?style=flat-square&labelColor=1a1a1e">
+  <img alt="tests" src="https://img.shields.io/badge/tests-24-3DDC84?style=flat-square&labelColor=1a1a1e">
+  <img alt="dependencias" src="https://img.shields.io/badge/dependencias-ninguna-8E8E93?style=flat-square&labelColor=1a1a1e">
+</p>
 
 ---
 
-## ✨ Características / Features
+## Qué es esto
 
-| Característica / Feature | Descripción / Description |
-|--------------------------|---------------------------|
-| 🔢 Algoritmo de Luhn | Validación checksum estándar industrial / Industry-standard checksum validation |
-| 🏢 Empresas soportadas | Visa, Mastercard, Amex, Maestro, Diners, Discover, JCB, UnionPay, Euro6000 |
-| 🌐 Bilingüe | Textos en español e inglés / Bilingual Spanish and English interface |
-| ✅ Validación completa | Longitud (13-19 dígitos) + checksum Luhn / Length (13-19 digits) + Luhn checksum |
-| 🛡️ Input seguro | Solo acepta dígitos, sin espacios ni caracteres especiales / Only accepts digits |
+Una CLI en Python que valida un número de tarjeta de crédito con el
+**algoritmo de Luhn** (ISO/IEC 7812-1) y, de paso, dice qué empresa lo ha
+emitido: Visa, Mastercard, Amex, Maestro, Diners, Discover, JCB o UnionPay.
 
----
+- Pide el número por consola y **solo acepta dígitos**: si no, avisa y vuelve
+  a pedirlo.
+- Comprueba por separado la **longitud** (de 13 a 19 dígitos) y el
+  **checksum**, y dice cuál de los dos falla.
+- La salida es **bilingüe** (español / inglés), igual que el propio programa.
 
-## 🏢 Tarjetas Soportadas / Supported Cards
+No va a ninguna red ni a ninguna base de datos: solo mira el número. O sea,
+que **no sirve para saber si una tarjeta existe o está activada**; para eso
+hay que llamar al banco.
 
-| Empresa / Company | Prefijos / Prefixes | Longitud / Length |
-|-------------------|---------------------|-------------------|
-| 💚 **VISA** | `4` | 13, 16, 19 |
-| 🟠 **MASTERCARD** | `51`-`55` | 16 |
-| 🔵 **AMEX** | `34`, `37` | 15 |
-| 🟣 **MAESTRO** | `50`, `58`, `63`, `67` | 12-19 |
-| 🔴 **DINERS** | `36`, `38`, `39` | 14 |
-| 🟡 **DISCOVER** | `6011`, `65` | 16 |
-| 🟢 **JCB** | `3528`-`3589` | 16 |
-| 🔵 **UNIONPAY** | `62` | 16-19 |
-| ⚪ **EURO6000** | `402400`-`402403` | 16 |
-
----
-
-## 🚀 Instalación / Installation
+## Uso
 
 ```bash
-# Clonar el repositorio / Clone the repository
 git clone https://github.com/Hugopvigo/Validador-tarjeta-credito.git
-
-# Entrar al directorio / Navigate to directory
 cd Validador-tarjeta-credito
-
-# Ejecutar / Run
-python creditcardvalidator.py
+python3 creditcardvalidator.py
 ```
 
-**Requisitos / Requirements:** Python 3.8 o superior / Python 3.8 or higher (sin dependencias externas / no external dependencies)
+En Windows, `python` en lugar de `python3`.
 
----
+![Salida del validador](docs/capturas/01-terminal.png)
+*Dos ejecuciones: una tarjeta que pasa el checksum y otra que no.*
 
-## 📖 Uso / Usage
+Un número válido:
 
-```bash
-$ python creditcardvalidator.py
-```
-
-### Ejemplos / Examples
-
-**✅ Tarjeta válida / Valid card:**
-```
+```console
+$ python3 creditcardvalidator.py
 Introduce el número de la tarjeta / Enter card number: 4532015112830366
 
 ==================================================
@@ -91,8 +61,10 @@ Introduce el número de la tarjeta / Enter card number: 4532015112830366
 ==================================================
 ```
 
-**❌ Tarjeta inválida / Invalid card:**
-```
+Uno que no lo pasa:
+
+```console
+$ python3 creditcardvalidator.py
 Introduce el número de la tarjeta / Enter card number: 1234567890123
 
 ==================================================
@@ -105,66 +77,78 @@ Introduce el número de la tarjeta / Enter card number: 1234567890123
 ==================================================
 ```
 
-**🚫 Error de entrada / Input error:**
-```
-Introduce el número de tarjeta / Enter card number: abc123
+Y si se escribe algo que no sean dígitos, lo dice y vuelve a pedir el número:
+
+```console
+Introduce el número de la tarjeta / Enter card number: abc123
 Error: solo se permiten dígitos / Error: only digits are allowed.
 ```
 
----
+## Tarjetas que reconoce
 
-## 🧪 Tests / Testing
+| Empresa | Prefijos | Longitud habitual |
+|---------|-----------|-------------------|
+| VISA | `4` | 13, 16, 19 |
+| MASTERCARD | `51`-`55` | 16 |
+| AMEX | `34`, `37` | 15 |
+| MAESTRO | `50`, `58`, `63`, `67` | 12-19 |
+| DINERS | `36`, `38`, `39` | 14 |
+| DISCOVER | `6011`, `65` | 16 |
+| JCB | `3528`-`3589` | 16 |
+| UNIONPAY | `62` | 16-19 |
+| EURO6000 | `402400`-`402403` | 16 |
+
+El prefijo es lo primero que se mira: si el número no empieza por ninguno de
+esos, la empresa sale como `UNKNOWN`. El programa solo aplica **una** regla de
+longitud, la de 13 a 19 dígitos; la columna de la derecha es la que usa cada
+empresa en la práctica, no la que se comprueba.
+
+Con **Euro6000 hay que estar avisados**: como VISA (`4`) se comprueba antes
+que Euro6000 en la lista, un número que empiece por `402400`-`402403` sale
+como `VISA`, no como `EURO6000`.
+
+## El algoritmo de Luhn
+
+1. Partiendo de la derecha, se duplica cada segundo dígito.
+2. Si el resultado de multiplicar es mayor que 9, se suman sus dos dígitos.
+3. Se suman todos los dígitos.
+4. Si la suma es múltiplo de 10, el número es válido.
+
+Lo inventó Hans Peter Luhn en 1954 y está descrito en la norma ISO/IEC 7812-1.
+
+## Tests
 
 ```bash
-python -m pytest test_creditcardvalidator.py -v
+python3 -m unittest -v test_creditcardvalidator
 ```
 
----
+24 tests con `unittest` (sin dependencias): el algoritmo, la identificación de
+la empresa y la validación completa. También funcionan con `pytest`:
 
-## 📁 Estructura del Proyecto / Project Structure
+```bash
+python3 -m pytest test_creditcardvalidator.py -v
+```
+
+## Estructura
 
 ```
 Validador-tarjeta-credito/
-├── creditcardvalidator.py              # Código principal / Main code
-├── Validador tarjeta notebook.ipynb    # Versión Jupyter / Jupyter version
-├── test_creditcardvalidator.py         # Tests unitarios / Unit tests
-├── README.md                           # Este archivo / This file
+├── creditcardvalidator.py                   # la CLI: Luhn, empresa y validación
+├── test_creditcardvalidator.py              # 24 tests (unittest)
+├── Validador tarjeta notebook.ipynb         # la misma lógica, en Jupyter
+├── Validador-tarjeta-credito.code-workspace # workspace de VS Code
 └── .gitignore
 ```
 
----
+## Licencia
 
-## 🔧 Algoritmo de Luhn / Luhn Algorithm
+Este repositorio **no tiene fichero `LICENSE`**: el código se publica sin
+licencia explícita, así que no hay permiso para reutilizarlo más allá de
+leerlo. Si lo quieres usar en algo tuyo, dímelo y lo vemos.
 
-El **algoritmo de Luhn** es un método simple de checksum utilizado para validar números de identificación, como números de tarjetas de crédito. Fue inventado por Hans Peter Luhn en 1954 y está descrito en el estándar **ISO/IEC 7812-1**.
+## Autor
 
-The **Luhn algorithm** is a simple checksum method used to validate identification numbers such as credit card numbers. It was invented by Hans Peter Luhn in 1954 and is described in the **ISO/IEC 7812-1** standard.
+**Hugo Perez-Vigo Fernandez** — [@Hugopvigo](https://github.com/Hugopvigo) · [@hugopvigo](https://twitter.com/hugopvigo)
 
-**Pasos / Steps:**
-1. Empezando por la derecha, duplicar cada segundo dígito / Starting from the right, double every second digit
-2. Si el resultado del duplicado es > 9, sumar los dígitos / If the doubled result is > 9, sum the digits
-3. Sumar todos los dígitos / Sum all digits
-4. Si la suma total es múltiplo de 10, el número es válido / If the total sum is a multiple of 10, the number is valid
-
----
-
-## 📄 Licencia / License
-
-MIT License - Ver [LICENSE](LICENSE) para más detalles.
-
----
-
-## 👤 Autor / Author
-
-**Hugo Perez-Vigo Fernandez** — [@hugopvigo](https://twitter.com/hugopvigo)
-
-[![GitHub](https://img.shields.io/badge/GitHub-Hugopvigo-181717?style=for-the-badge&logo=github)](https://github.com/Hugopvigo)
-[![Twitter](https://img.shields.io/badge/Twitter-@hugopvigo-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/hugopvigo)
-
----
-
-<div align="center">
-
-Hecho con ❤️ en Python / Made with ❤️ in Python
-
-</div>
+[![GitHub](https://img.shields.io/badge/GitHub-Hugopvigo-181717?style=flat-square&labelColor=1a1a1e)](https://github.com/Hugopvigo)
+[![Twitter](https://img.shields.io/badge/Twitter-@hugopvigo-1DA1F2?style=flat-square&labelColor=1a1a1e)](https://twitter.com/hugopvigo)
