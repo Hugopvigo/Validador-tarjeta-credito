@@ -1,3 +1,7 @@
+<meta property="og:title" content="VALIDADOR-TARJETA-CREDITO">
+<meta property="og:description" content="Un validador de números de tarjeta por Luhn, en Python y sin dependencias.">
+<meta property="og:image" content="https://raw.githubusercontent.com/Hugopvigo/Validador-tarjeta-credito/master/docs/capturas/og.png">
+
 <p align="center">
   <img src="docs/capturas/00-cabecera.png" alt="Validador de tarjetas de crédito con el algoritmo de Luhn" width="100%">
 </p>
