@@ -12,6 +12,7 @@
   <img alt="algoritmo" src="https://img.shields.io/badge/algoritmo-Luhn-4EA8FF?style=flat-square&labelColor=1a1a1e">
   <img alt="tests" src="https://img.shields.io/badge/tests-24-3DDC84?style=flat-square&labelColor=1a1a1e">
   <img alt="dependencias" src="https://img.shields.io/badge/dependencias-ninguna-8E8E93?style=flat-square&labelColor=1a1a1e">
+  <img alt="licencia" src="https://img.shields.io/badge/licencia-CC%20BY--NC--SA%204.0-5F6368?style=flat-square&labelColor=1a1a1e">
 </p>
 
 ---
@@ -142,9 +143,9 @@ Validador-tarjeta-credito/
 
 ## Licencia
 
-Este repositorio **no tiene fichero `LICENSE`**: el código se publica sin
-licencia explícita, así que no hay permiso para reutilizarlo más allá de
-leerlo. Si lo quieres usar en algo tuyo, dímelo y lo vemos.
+El código de este repositorio está bajo **CC BY-NC-SA 4.0**: se puede compartir
+y adaptar con fines no comerciales, citando al autor y manteniendo la misma
+licencia. Texto completo en [`LICENSE`](LICENSE).
 
 ## Autor
 
